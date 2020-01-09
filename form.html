@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>form submit</title>
+        <script type="text/javascript">
+        function validate(){
+            var username=document.getElementById("name");
+            var password=document.getElementById("pass");
+            if(username.value==""){
+                username.style.border="solid 3px red";
+
+                //alert("username cannot be blank");
+                return false;
+            }
+            else if(password.value==""){
+                password.style.border="solid 3px red";
+                return false;
+            }
+            else if(password.value.length<5){
+                document.getElementById("all").style.visibility="visible";
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <form action="index.html" onsubmit="return validate()">
+        <h1>please fill the form</h1><br><br>
+        <input id="name" type="text" placeholder="username"/>
+        <br><br>
+        <input id="pass" type="password" placeholder="password"/>
+        <label id="all"  style="color: red ;visibility: hidden;" >Invalid</label>
+        <br><br>
+        <button type="submit">click</button>
+        </form>
+    </body>
+</html>
